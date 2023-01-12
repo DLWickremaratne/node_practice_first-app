@@ -14,3 +14,21 @@ console.log(pathObj);
 const operating = require('os');
 let freeMemory = operating.freemem();
 console.log(` Free memory:  ${freeMemory}`);
+
+
+//file system module , how to work with modules 
+//read directory
+
+const filesystem = require('fs');
+
+const files = filesystem.readdirSync('./');
+console.log(files);
+
+//callback 
+files.readdir('./', function(err,files){
+    if (err) console.log('Error', err);
+    else console.log('Result', files);
+})
+
+
+
